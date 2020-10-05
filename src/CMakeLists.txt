@@ -17,7 +17,7 @@ if (${OPENCV_VERSION} VERSION_LESS 2.4)
 
     set(BUILD_SPARSE_STEREO TRUE)
 elseif (${OPENCV_VERSION} VERSION_LESS 3.0)
-    message(STATUS "found post-2.4 and pre-3.0 OpenCV version in ${OPENCV_INCLUDE_DIRS}")
+    message(STATUS "found OpenCV version 2.4x in ${OPENCV_INCLUDE_DIRS}")
     # Check if the non-free stuff is there
     find_file(OPENCV_HAS_NONFREE
         opencv2/nonfree/features2d.hpp
