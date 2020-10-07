@@ -45,7 +45,7 @@ elseif (${OPENCV_VERSION} VERSION_LESS 3.0)
 
     set(BUILD_SPARSE_STEREO TRUE)
 else()
-    message(STATUS "found post-3.0 OpenCV version")
+    message(STATUS "found post-3.0 OpenCV version. This version does not support the current implementation of sparse features, excluding them from builds.")
     set(BUILD_SPARSE_STEREO FALSE)
 endif()
 
