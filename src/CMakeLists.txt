@@ -1,7 +1,7 @@
 # include macro
 include(FindPkgConfig)
 
-rock_find_pkgconfig(OPENCV REQUIRED opencv)
+rock_find_pkgconfig(OPENCV REQUIRED ${OPENCV_PACKAGE})
 if (${OPENCV_VERSION} VERSION_LESS 2.4)
     message(STATUS "found pre-2.4 OpenCV version")
     # The CV 2.3 pkg-config file does not include the opencv_gpu library. Look for
@@ -66,7 +66,7 @@ endif()
 
 rock_library(stereo
     SOURCES ${stereo_SOURCES}
-    DEPS_PKGCONFIG opencv frame_helper libelas
+    DEPS_PKGCONFIG ${OPENCV_PACKAGE} frame_helper libelas
     HEADERS ${stereo_HEADERS})
 
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/stereo/config.h

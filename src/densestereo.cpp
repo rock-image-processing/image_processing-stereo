@@ -67,11 +67,11 @@ void DenseStereo::cvtCvMatToGrayscaleImage(cv::Mat &image) {
       image.convertTo(newImage, CV_8U, 1/256.);
       break;
     case CV_8UC3:
-      cvtColor( image, newImage, CV_BGR2GRAY );
+      cvtColor( image, newImage, cv::COLOR_BGR2GRAY );
       break;
     case CV_16UC3:
       image.convertTo(newImage, CV_8U, 1/256.);
-      cvtColor( image, newImage, CV_BGR2GRAY );
+      cvtColor( image, newImage, cv::COLOR_BGR2GRAY );
       break;
     default:
       throw std::runtime_error("Unknown format. Cannot convert cv::Mat to grayscale.");
